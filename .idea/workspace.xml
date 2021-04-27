@@ -130,6 +130,7 @@
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/spatie/yaml-front-matter" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/itsgoingd/clockwork" />
     </include_path>
   </component>
   <component name="ProjectId" id="1rZ6fBdPfXbuToJk5kYUCzQ1GfZ" />
@@ -165,7 +166,8 @@
       <option name="presentableId" value="Default" />
       <updated>1619171369155</updated>
       <workItem from="1619171372694" duration="6762000" />
-      <workItem from="1619417250507" duration="15364000" />
+      <workItem from="1619417250507" duration="16066000" />
+      <workItem from="1619504144955" duration="14358000" />
     </task>
     <servers />
   </component>

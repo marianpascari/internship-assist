@@ -18,4 +18,9 @@ class Student extends Model
         'specialization',
         'cnp'
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -16,4 +16,9 @@ class Professor extends Model
         'faculty',
         'cnp'
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,13 @@ Route::get('/student', function () {
 
 Route::get('/professor', function () {
     return view('student');
+});
+
+Route::get('/admin/users', function () {
+    $users = User::all();
+    //dd($users[0]->email);
+
+    return view('users', [
+        'users' => $users
+    ]);
 });

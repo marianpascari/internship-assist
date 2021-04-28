@@ -14,4 +14,9 @@ class Request extends Model
         'title',
         'status'
     ];
+
+    public function students()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }

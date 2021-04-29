@@ -121,6 +121,7 @@
       <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
     </include_path>
   </component>
   <component name="ProjectId" id="1rmtkGHOS7PEoXgCfTpqxHvSAb4" />
@@ -152,6 +153,7 @@
       <updated>1619593237417</updated>
       <workItem from="1619593240481" duration="8816000" />
       <workItem from="1619603449611" duration="6373000" />
+      <workItem from="1619676670748" duration="15028000" />
     </task>
     <servers />
   </component>

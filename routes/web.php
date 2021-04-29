@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,26 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login-page');
+    return redirect('/login');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 });
 
-Route::get('/student', function () {
-    return view('student');
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/myprofile', 'App\Http\Controllers\DashboardController@myprofile')->name('dashboard.myprofile');
 });
 
-Route::get('/professor', function () {
-    return view('student');
-});
-
-Route::get('/admin/users', function () {
-    $users = User::all();
-    //dd($users[0]->email);
-
-    return view('users', [
-        'users' => $users
-    ]);
-});
+require __DIR__.'/auth.php';

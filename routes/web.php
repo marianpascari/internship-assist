@@ -25,4 +25,8 @@ Route::group(['middleware' => ['role:student']], function() {
     Route::get('dashboard/myprofile', 'App\Http\Controllers\DashboardController@myprofile')->name('dashboard.myprofile');
 });
 
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::get('dashboard/users', 'App\Http\Controllers\DashboardController@getUsers')->name('dashboard.users');
+});
+
 require __DIR__.'/auth.php';

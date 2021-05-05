@@ -135,6 +135,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -154,7 +155,7 @@
       <workItem from="1619593240481" duration="8816000" />
       <workItem from="1619603449611" duration="6373000" />
       <workItem from="1619676670748" duration="18222000" />
-      <workItem from="1620195736645" duration="6324000" />
+      <workItem from="1620195736645" duration="15618000" />
     </task>
     <servers />
   </component>

@@ -10,12 +10,12 @@ class Role
 {
     public function handle($request, Closure $next, $role)
     {
-        if(!Auth::check())
+        if (!Auth::check())
             return redirect('login');
 
         $user = Auth::user();
 
-        if($user->hasRole($role)) {
+        if ($user->hasRole($role)) {
             return $next($request);
         }
 

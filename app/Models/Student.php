@@ -19,13 +19,13 @@ class Student extends Model
         'cnp'
     ];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function professors()
+    public function professor()
     {
-        return $this->hasOne(Professor::class,'professor_id' , 'id');
+        return $this->belongsTo(Professor::class, 'professor_id', 'id');
     }
 }

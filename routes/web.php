@@ -29,4 +29,8 @@ Route::group(['middleware' => ['role:administrator']], function() {
     Route::get('dashboard/users', 'App\Http\Controllers\DashboardController@getUsers')->name('dashboard.users');
 });
 
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::get('dashboard/users/createstudent', 'App\Http\Controllers\AdminController@createStudent')->name('dashboard.users.createstudent');
+});
+
 require __DIR__.'/auth.php';

@@ -33,4 +33,12 @@ Route::group(['middleware' => ['role:administrator']], function() {
     Route::get('dashboard/users/createstudent', 'App\Http\Controllers\AdminController@createStudent')->name('dashboard.users.createstudent');
 });
 
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::post('dashboard/users/storestudent', 'App\Http\Controllers\AdminController@storeStudent')->name('dashboard.users.storestudent');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::get('dashboard/users/createprofessor', 'App\Http\Controllers\AdminController@createProfessor')->name('dashboard.users.createprofessor');
+});
+
 require __DIR__.'/auth.php';

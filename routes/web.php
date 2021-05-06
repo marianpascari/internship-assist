@@ -65,4 +65,8 @@ Route::group(['middleware' => ['role:administrator']], function() {
     Route::post('dashboard/users/deleteadmin', 'App\Http\Controllers\AdminController@deleteAdmin')->name('dashboard.users.deleteadmin');
 });
 
+Route::group(['middleware' => ['role:professor']], function() {
+    Route::get('dashboard/mystudents', 'App\Http\Controllers\ProfessorController@getMyStudents')->name('dashboard.users.mystudents');
+});
+
 require __DIR__.'/auth.php';

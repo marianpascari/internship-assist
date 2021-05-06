@@ -41,4 +41,28 @@ Route::group(['middleware' => ['role:administrator']], function() {
     Route::get('dashboard/users/createprofessor', 'App\Http\Controllers\AdminController@createProfessor')->name('dashboard.users.createprofessor');
 });
 
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::post('dashboard/users/storeprofessor', 'App\Http\Controllers\AdminController@storeProfessor')->name('dashboard.users.storeprofessor');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::get('dashboard/users/createadmin', 'App\Http\Controllers\AdminController@createAdmin')->name('dashboard.users.createadmin');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::post('dashboard/users/storeadmin', 'App\Http\Controllers\AdminController@storeAdmin')->name('dashboard.users.storeadmin');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::post('dashboard/users/deletestudent', 'App\Http\Controllers\AdminController@deleteStudent')->name('dashboard.users.deletestudent');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::post('dashboard/users/deleteprofessor', 'App\Http\Controllers\AdminController@deleteProfessor')->name('dashboard.users.deleteprofessor');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::post('dashboard/users/deleteadmin', 'App\Http\Controllers\AdminController@deleteAdmin')->name('dashboard.users.deleteadmin');
+});
+
 require __DIR__.'/auth.php';

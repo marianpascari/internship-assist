@@ -38,9 +38,13 @@
                                                     <label for="cnp" class="block text-sm font-medium text-gray-700">CNP</label>
                                                     <input type="number" name="cnp" id="cnp" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
-                                                <div class="col-span-6 sm:col-span-6 lg:col-span-3">
+                                                <div class="col-span-6 sm:col-span-3">
                                                     <label for="professor_id" class="block text-sm font-medium text-gray-700">Profesor indrumator</label>
-                                                    <input type="number" name="professor_id" id="professor_id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    <select id="professor_id" name="professor_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                        @foreach($professors as $professor)
+                                                            <option value="{{ $professor->id }}">{{ $professor->last_name }} {{ $professor->first_name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                                                     <label for="faculty" class="block text-sm font-medium text-gray-700">Facultate</label>

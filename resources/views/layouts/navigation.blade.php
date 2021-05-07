@@ -26,6 +26,16 @@
                         {{ __('Users') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.mystudents')" :active="request()->routeIs('dashboard.mystudents')">
+                        {{ __('My Students') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.createrequest')" :active="request()->routeIs('dashboard.createrequest')">
+                        {{ __('Request') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

@@ -66,7 +66,11 @@ Route::group(['middleware' => ['role:administrator']], function() {
 });
 
 Route::group(['middleware' => ['role:professor']], function() {
-    Route::get('dashboard/mystudents', 'App\Http\Controllers\ProfessorController@getMyStudents')->name('dashboard.users.mystudents');
+    Route::get('dashboard/mystudents', 'App\Http\Controllers\ProfessorController@getMyStudents')->name('dashboard.mystudents');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/createrequest', 'App\Http\Controllers\StudentController@createRequest')->name('dashboard.createrequest');
 });
 
 require __DIR__.'/auth.php';

@@ -18,6 +18,7 @@ class CreateRequestsTable extends Migration
             $table->foreignId('student_id');
             $table->string('title');
             $table->integer('status');
+            $table->string('filename');
             $table->timestamps();
         });
     }

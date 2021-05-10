@@ -28,4 +28,9 @@ class Student extends Model
     {
         return $this->belongsTo(Professor::class, 'professor_id', 'id');
     }
+
+    public function request()
+    {
+        return $this->hasOne(Request::class);
+    }
 }

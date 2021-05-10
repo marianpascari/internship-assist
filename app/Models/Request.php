@@ -12,7 +12,8 @@ class Request extends Model
     protected $fillable = [
         'student_id',
         'title',
-        'status'
+        'status',
+        'filename'
     ];
 
     public function students()

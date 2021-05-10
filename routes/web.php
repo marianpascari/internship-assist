@@ -73,4 +73,12 @@ Route::group(['middleware' => ['role:student']], function() {
     Route::get('dashboard/createrequest', 'App\Http\Controllers\StudentController@createRequest')->name('dashboard.createrequest');
 });
 
+Route::group(['middleware' => ['role:student']], function() {
+    Route::post('dashboard/storerequest', 'App\Http\Controllers\StudentController@storeRequest')->name('dashboard.storerequest');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/showupload', 'App\Http\Controllers\StudentController@showUpload')->name('dashboard.showupload');
+});
+
 require __DIR__.'/auth.php';

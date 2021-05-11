@@ -32,4 +32,13 @@ class DashboardController extends Controller
             'users' => $users
         ]);
     }
+
+    public function getRequests()
+    {
+        $requests = \App\Models\Request::all();
+
+        return view('requests', [
+            'requests' => $requests
+        ]);
+    }
 }

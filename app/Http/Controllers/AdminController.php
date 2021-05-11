@@ -116,4 +116,13 @@ class AdminController extends Controller
 
         return redirect()->route('dashboard.users')->with('succes', 'Admin sters!');
     }
+
+    public function viewDocument(Request $request)
+    {
+        $requestId = $request->get('requestId');
+        $thisRequest = \App\Models\Request::findorfail($requestId);
+        $path = storage_path('app/public/' . $thisRequest->filename);
+
+        return response()->file($path);
+    }
 }

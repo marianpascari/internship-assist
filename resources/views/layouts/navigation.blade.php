@@ -16,26 +16,38 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard.myprofile')">
-                        {{ __('My Profile') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.users')" :active="request()->routeIs('dashboard.users')">
-                        {{ __('Users') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.mystudents')" :active="request()->routeIs('dashboard.mystudents')">
-                        {{ __('My Students') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.createrequest')" :active="request()->routeIs('dashboard.createrequest')">
-                        {{ __('Request') }}
-                    </x-nav-link>
-                </div>
+                @if (Auth::user()->role == 'student')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard.myprofile')">
+                            {{ __('My Profile') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('dashboard.createrequest')" :active="request()->routeIs('dashboard.createrequest')">
+                            {{ __('Request') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if (Auth::user()->role == 'administrator')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('dashboard.users')" :active="request()->routeIs('dashboard.users')">
+                            {{ __('Users') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('dashboard.requests')" :active="request()->routeIs('dashboard.requests')">
+                            {{ __('Requests') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if (Auth::user()->role == 'professor')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('dashboard.mystudents')" :active="request()->routeIs('dashboard.mystudents')">
+                            {{ __('My Students') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+
             </div>
 
             <!-- Settings Dropdown -->

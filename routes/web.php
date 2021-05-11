@@ -30,6 +30,10 @@ Route::group(['middleware' => ['role:administrator']], function() {
 });
 
 Route::group(['middleware' => ['role:administrator']], function() {
+    Route::get('dashboard/requests', 'App\Http\Controllers\DashboardController@getRequests')->name('dashboard.requests');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
     Route::get('dashboard/users/createstudent', 'App\Http\Controllers\AdminController@createStudent')->name('dashboard.users.createstudent');
 });
 
@@ -63,6 +67,10 @@ Route::group(['middleware' => ['role:administrator']], function() {
 
 Route::group(['middleware' => ['role:administrator']], function() {
     Route::post('dashboard/users/deleteadmin', 'App\Http\Controllers\AdminController@deleteAdmin')->name('dashboard.users.deleteadmin');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::get('dashboard/requests/viewdocument', 'App\Http\Controllers\AdminController@viewDocument')->name('dashboard.requests.viewdocument');
 });
 
 Route::group(['middleware' => ['role:professor']], function() {

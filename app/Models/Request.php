@@ -16,7 +16,7 @@ class Request extends Model
         'filename'
     ];
 
-    public function students()
+    public function student()
     {
         return $this->belongsTo(Student::class);
     }

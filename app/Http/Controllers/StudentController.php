@@ -31,13 +31,13 @@ class StudentController extends Controller
         return redirect()->route('dashboard');
     }
 
+
+
     public function showUpload()
     {
-        //$content = Storage::get('public/Sigla-USV-standard-centrat.png');
-        //$path = public_path('storage/Sigla-USV-standard-centrat.png');
-        $path = storage_path('app/public/Conventie Practica_Pacari Constantin Marian.pdf');
+        $filename = Auth::user()->student->request->filename;
+        $path = storage_path('app/public/' . $filename);
 
-        //echo asset('storage/Sigla-USV-standard-centrat.png');
-       return response()->file($path);
+        return response()->file($path);
     }
 }

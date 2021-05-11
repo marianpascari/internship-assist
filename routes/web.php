@@ -78,6 +78,10 @@ Route::group(['middleware' => ['role:student']], function() {
 });
 
 Route::group(['middleware' => ['role:student']], function() {
+    Route::post('dashboard/deleterequest', 'App\Http\Controllers\StudentController@deleteRequest')->name('dashboard.deleterequest');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
     Route::get('dashboard/showupload', 'App\Http\Controllers\StudentController@showUpload')->name('dashboard.showupload');
 });
 

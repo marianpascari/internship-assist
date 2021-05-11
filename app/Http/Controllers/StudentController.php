@@ -31,7 +31,15 @@ class StudentController extends Controller
         return redirect()->route('dashboard');
     }
 
+    public function deleteRequest(Request $request)
+    {
+        $filename = Auth::user()->student->request->filename;
 
+        Storage::delete('public/' . $filename);
+        Auth::user()->student->request->delete();
+
+        return redirect()->route('dashboard');
+    }
 
     public function showUpload()
     {

@@ -22,10 +22,7 @@
                                                 Facultate
                                             </th>
                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Cerere
-                                            </th>
-                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                CNP
+                                                Status cerere
                                             </th>
                                             <th scope="col" class="relative px-6 py-3">
                                                 <span class="sr-only">Edit</span>
@@ -45,9 +42,6 @@
                                                                 <div class="text-sm font-medium text-gray-900">
                                                                     {{ $student->last_name }} {{ $student->first_name }}
                                                                 </div>
-                                                                <div class="text-sm text-gray-500">
-                                                                    {{ $student->user->email }}
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -56,18 +50,21 @@
                                                         <div class="text-sm text-gray-500">{{ $student->specialization }}</div>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                          {{ "detalii cerere" }}
-                                                        </span>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                        {{ $student->cnp }}
+                                                        @if ($student->request->status == 1)
+                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                              in asteptare
+                                                            </span>
+                                                        @elseif($student->request->status == 2)
+                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                              acceptata
+                                                            </span>
+                                                        @endif
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
-                                                        <form action="#" method="GET">
+                                                        <form action="{{ route('dashboard.studentprofile') }}" method="GET">
                                                             @csrf
-                                                            <input type="hidden" name="requestId" value="<?=$student->id?>"/>
-                                                            <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gradient-to-r from-blue-400 to-blue-600 transform hover:scale-110">Vezi profil</button>
+                                                            <input type="hidden" name="studentId" value="<?=$student->id?>"/>
+                                                            <button type="submit" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gradient-to-r from-blue-400 to-blue-600 transform hover:scale-110">Vezi profil</button>
                                                         </form>
                                                     </td>
                                                 </tr>

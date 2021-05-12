@@ -17,4 +17,15 @@ class ProfessorController extends Controller
             'students' => $students
         ]);
     }
+
+    public function viewStudentProfile(Request $request)
+    {
+        $studentId = $request->get('studentId');
+        $student = Student::findOrFail($studentId);
+
+        return view('studentprofile', [
+            'student' => $student
+        ]);
+
+    }
 }

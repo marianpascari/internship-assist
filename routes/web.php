@@ -85,6 +85,10 @@ Route::group(['middleware' => ['role:professor']], function() {
     Route::get('dashboard/mystudents', 'App\Http\Controllers\ProfessorController@getMyStudents')->name('dashboard.mystudents');
 });
 
+Route::group(['middleware' => ['role:professor']], function() {
+    Route::get('dashboard/mystudents/studentprofile', 'App\Http\Controllers\ProfessorController@viewStudentProfile')->name('dashboard.studentprofile');
+});
+
 Route::group(['middleware' => ['role:student']], function() {
     Route::get('dashboard/createrequest', 'App\Http\Controllers\StudentController@createRequest')->name('dashboard.createrequest');
 });

@@ -73,6 +73,14 @@ Route::group(['middleware' => ['role:administrator']], function() {
     Route::get('dashboard/requests/viewdocument', 'App\Http\Controllers\AdminController@viewDocument')->name('dashboard.requests.viewdocument');
 });
 
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::post('dashboard/requests/accept', 'App\Http\Controllers\AdminController@acceptRequest')->name('dashboard.requests.accept');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
+    Route::post('dashboard/requests/decline', 'App\Http\Controllers\AdminController@declineRequest')->name('dashboard.requests.decline');
+});
+
 Route::group(['middleware' => ['role:professor']], function() {
     Route::get('dashboard/mystudents', 'App\Http\Controllers\ProfessorController@getMyStudents')->name('dashboard.mystudents');
 });

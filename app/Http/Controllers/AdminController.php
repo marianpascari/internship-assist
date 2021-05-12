@@ -6,6 +6,7 @@ use App\Models\Professor;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -124,5 +125,25 @@ class AdminController extends Controller
         $path = storage_path('app/public/' . $thisRequest->filename);
 
         return response()->file($path);
+    }
+
+    public function acceptRequest(Request $request)
+    {
+        $requestId = $request->get('requestId');
+        $thisRequest = \App\Models\Request::findorfail($requestId);
+        $thisRequest->status = 2;
+        $thisRequest->save();
+
+        return redirect()->route('dashboard.requests');
+    }
+
+    public function declineRequest(Request $request)
+    {
+        $requestId = $request->get('requestId');
+        $thisRequest = \App\Models\Request::findorfail($requestId);
+        Storage::delete('public/' . $thisRequest->filename);
+        $thisRequest->delete();
+
+        return redirect()->route('dashboard.requests');
     }
 }

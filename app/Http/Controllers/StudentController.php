@@ -19,7 +19,7 @@ class StudentController extends Controller
         $file = $request->file('uploadedFile');
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         if (finfo_file($finfo, $file) == "application/pdf") {
-            $filename = $file->getClientOriginalName();
+            $filename = time() . $file->getClientOriginalName();
 
             $path = $file->storeAs('public', $filename);
 
@@ -29,7 +29,6 @@ class StudentController extends Controller
             $thisrequest->filename = $filename;
             $thisrequest->status = 1;
             $thisrequest->save();
-
         }
 
         return redirect()->route('dashboard.createrequest');

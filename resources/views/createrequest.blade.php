@@ -24,8 +24,8 @@
                                                     <input type="text" name="title" id="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
                                                 <div>
-                                                    <label for="file">Choose file to upload</label>
-                                                    <input type="file" id="file" name="uploadedFile" multiple>
+                                                    <label for="file">Alege un fisier</label>
+                                                    <input type="file" id="file" name="uploadedFile" accept="application/pdf" multiple>
                                                 </div>
                                             </div>
                                         </div>

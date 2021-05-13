@@ -17,18 +17,22 @@ class StudentController extends Controller
     public function storeRequest(Request $request)
     {
         $file = $request->file('uploadedFile');
-        $filename = $file->getClientOriginalName();
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        if (finfo_file($finfo, $file) == "application/pdf") {
+            $filename = $file->getClientOriginalName();
 
-        $path = $file->storeAs('public', $filename);
+            $path = $file->storeAs('public', $filename);
 
-        $thisrequest = new \App\Models\Request();
-        $thisrequest->title = $request->get('title');
-        $thisrequest->student_id = Auth::user()->student->id;
-        $thisrequest->filename = $filename;
-        $thisrequest->status = 1;
-        $thisrequest->save();
+            $thisrequest = new \App\Models\Request();
+            $thisrequest->title = $request->get('title');
+            $thisrequest->student_id = Auth::user()->student->id;
+            $thisrequest->filename = $filename;
+            $thisrequest->status = 1;
+            $thisrequest->save();
 
-        return redirect()->route('dashboard');
+        }
+
+        return redirect()->route('dashboard.createrequest');
     }
 
     public function deleteRequest(Request $request)

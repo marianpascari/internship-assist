@@ -50,14 +50,20 @@
                                                         <div class="text-sm text-gray-500">{{ $student->specialization }}</div>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        @if ($student->request->status == 1)
+                                                        @if (!is_null($student->request))
+                                                            @if ($student->request->status == 1)
+                                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                                  in asteptare
+                                                                </span>
+                                                            @elseif ($student->request->status == 2)
+                                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                                  acceptata
+                                                                </span>
+                                                            @endif
+                                                        @else
                                                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                              in asteptare
-                                                            </span>
-                                                        @elseif($student->request->status == 2)
-                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                              acceptata
-                                                            </span>
+                                                                  nu este depusa
+                                                                </span>
                                                         @endif
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">

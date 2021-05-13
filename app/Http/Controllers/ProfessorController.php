@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ProfessorController extends Controller
 {
@@ -26,6 +27,33 @@ class ProfessorController extends Controller
         return view('studentprofile', [
             'student' => $student
         ]);
+    }
 
+    public function getMailPage(Request $request)
+    {
+        $studentId = $request->get('studentId');
+        $student = Student::findOrFail($studentId);
+
+        return view('mailpage', [
+            'student' => $student
+        ]);
+    }
+
+    public function sendMail(Request $request)
+    {
+        $studentId = $request->get('studentId');
+        $student = Student::findOrFail($studentId);
+
+        $mailsubject = $request->get('subject');
+        $mailbody = $request->get('body');
+
+        $data = ['body' => $mailbody];
+        $user['to'] = $student->user->email;
+        Mail::send('mail', $data, function($messages) use ($user, $mailsubject){
+            $messages->to($user['to']);
+            $messages->subject($mailsubject);
+        });
+
+        return redirect()->route('dashboard.mystudents');
     }
 }

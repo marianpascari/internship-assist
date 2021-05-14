@@ -19,6 +19,7 @@ class CreateRequestsTable extends Migration
             $table->string('title');
             $table->integer('status');
             $table->string('filename');
+            $table->string('project_filename');
             $table->timestamps();
         });
     }

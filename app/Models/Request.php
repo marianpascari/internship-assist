@@ -13,7 +13,8 @@ class Request extends Model
         'student_id',
         'title',
         'status',
-        'filename'
+        'filename',
+        'project_filename'
     ];
 
     public function student()

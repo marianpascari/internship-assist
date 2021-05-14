@@ -127,6 +127,15 @@ class AdminController extends Controller
         return response()->file($path);
     }
 
+    public function viewProject(Request $request)
+    {
+        $requestId = $request->get('requestId');
+        $thisRequest = \App\Models\Request::findorfail($requestId);
+        $path = storage_path('app/public/' . $thisRequest->project_filename);
+
+        return response()->file($path);
+    }
+
     public function acceptRequest(Request $request)
     {
         $requestId = $request->get('requestId');
@@ -142,6 +151,7 @@ class AdminController extends Controller
         $requestId = $request->get('requestId');
         $thisRequest = \App\Models\Request::findorfail($requestId);
         Storage::delete('public/' . $thisRequest->filename);
+        Storage::delete('public/' . $thisRequest->project_filename);
         $thisRequest->delete();
 
         return redirect()->route('dashboard.requests');

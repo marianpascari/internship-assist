@@ -20,27 +20,27 @@
                                             <div class="grid grid-cols-6 gap-6">
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="first_name" class="block text-sm font-medium text-gray-700">Prenume</label>
-                                                    <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="last_name" class="block text-sm font-medium text-gray-700">Nume</label>
-                                                    <input type="text" name="last_name" id="last_name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    <input type="text" name="last_name" id="last_name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-4">
                                                     <label for="email" class="block text-sm font-medium text-gray-700">Adresa email</label>
-                                                    <input type="text" name="email" id="email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    <input type="text" name="email" id="email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-4">
                                                     <label for="password" class="block text-sm font-medium text-gray-700">Parola contului</label>
-                                                    <input type="text" name="password" id="password" autocomplete="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    <input type="text" name="password" id="password" autocomplete="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                                                     <label for="cnp" class="block text-sm font-medium text-gray-700">CNP</label>
-                                                    <input type="number" name="cnp" id="cnp" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    <input type="number" name="cnp" id="cnp" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                                                     <label for="faculty" class="block text-sm font-medium text-gray-700">Facultate</label>
-                                                    <input type="text" name="faculty" id="faculty" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    <input type="text" name="faculty" id="faculty" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                                 </div>
                                             </div>
                                         </div>

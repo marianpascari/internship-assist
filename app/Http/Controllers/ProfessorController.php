@@ -39,6 +39,14 @@ class ProfessorController extends Controller
         ]);
     }
 
+    public function viewStudentProject(Request $request)
+    {
+        $filename = $request->get('projectFilename');
+        $path = storage_path('app/public/' . $filename);
+
+        return response()->file($path);
+    }
+
     public function sendMail(Request $request)
     {
         $studentId = $request->get('studentId');
@@ -56,4 +64,5 @@ class ProfessorController extends Controller
 
         return redirect()->route('dashboard.mystudents');
     }
+
 }

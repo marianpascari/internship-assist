@@ -74,6 +74,18 @@
                                                         </button>
                                                     </form>
                                                 </div>
+                                                <div class="text-sm text-gray-900 mt-1">
+                                                    <form action="{{ route('dashboard.requests.viewproject') }}" method="GET">
+                                                        @csrf
+                                                        <input type="hidden" name="requestId" value="<?=$request->id?>"/>
+                                                        <button type="submit" class="focus:outline-none text-purple-600 text-sm py-2.5 px-5 rounded-md border border-purple-600 hover:bg-purple-50 flex items-center">
+                                                            <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                            Proiect
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium ">
                                                 <form action="{{ route('dashboard.requests.accept') }}" method="POST">
@@ -171,6 +183,18 @@
                                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                                 </svg>
                                                                 Documente
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="text-sm text-gray-900 mt-1">
+                                                        <form action="{{ route('dashboard.requests.viewproject') }}" method="GET">
+                                                            @csrf
+                                                            <input type="hidden" name="requestId" value="<?=$request->id?>"/>
+                                                            <button type="submit" class="focus:outline-none text-purple-600 text-sm py-2.5 px-5 rounded-md border border-purple-600 hover:bg-purple-50 flex items-center">
+                                                                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                </svg>
+                                                                Proiect
                                                             </button>
                                                         </form>
                                                     </div>

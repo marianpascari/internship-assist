@@ -74,6 +74,10 @@ Route::group(['middleware' => ['role:administrator']], function() {
 });
 
 Route::group(['middleware' => ['role:administrator']], function() {
+    Route::get('dashboard/requests/viewproject', 'App\Http\Controllers\AdminController@viewProject')->name('dashboard.requests.viewproject');
+});
+
+Route::group(['middleware' => ['role:administrator']], function() {
     Route::post('dashboard/requests/accept', 'App\Http\Controllers\AdminController@acceptRequest')->name('dashboard.requests.accept');
 });
 
@@ -87,6 +91,10 @@ Route::group(['middleware' => ['role:professor']], function() {
 
 Route::group(['middleware' => ['role:professor']], function() {
     Route::get('dashboard/mystudents/studentprofile', 'App\Http\Controllers\ProfessorController@viewStudentProfile')->name('dashboard.studentprofile');
+});
+
+Route::group(['middleware' => ['role:professor']], function() {
+    Route::get('dashboard/mystudents/studentprofile/project', 'App\Http\Controllers\ProfessorController@viewStudentProject')->name('dashboard.studentprofile.project');
 });
 
 Route::group(['middleware' => ['role:professor']], function() {
@@ -113,6 +121,8 @@ Route::group(['middleware' => ['role:student']], function() {
     Route::get('dashboard/showupload', 'App\Http\Controllers\StudentController@showUpload')->name('dashboard.showupload');
 });
 
-
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/showproject', 'App\Http\Controllers\StudentController@showProjectFile')->name('dashboard.showproject');
+});
 
 require __DIR__.'/auth.php';

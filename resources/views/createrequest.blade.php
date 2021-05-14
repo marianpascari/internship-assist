@@ -21,11 +21,15 @@
                                             <div class="grid grid-cols-6 gap-6">
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="title" class="block text-sm font-medium text-gray-700">Titlu</label>
-                                                    <input type="text" name="title" id="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    <input type="text" name="title" id="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                                 </div>
                                                 <div>
-                                                    <label for="file">Alege un fisier</label>
-                                                    <input type="file" id="file" name="uploadedFile" accept="application/pdf" multiple>
+                                                    <label for="file">Cerere inscriere</label>
+                                                    <input type="file" id="file" name="uploadedFile" accept="application/pdf" required>
+                                                </div>
+                                                <div>
+                                                    <label for="projectfile">Lucrare licenta</label>
+                                                    <input type="file" id="projectfile" name="projectFile" accept="application/pdf" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -50,7 +54,15 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
                                         </svg>
                                         Vezi documente
-                                    </button></a>
+                                        </button></a>
+
+                                    <a href=" {{ route('dashboard.showproject') }}"><button type="button" class="mb-2 focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-blue-600 hover:shadow-lg flex items-center">
+                                            <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                                            </svg>
+                                            Vezi proiect
+                                        </button></a>
+
                                     <form action="{{ route('dashboard.deleterequest') }}" method="POST">
                                         @csrf
                                         <button type="submit" class="mb-2 focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-red-500 hover:bg-red-600 hover:shadow-lg flex items-center">

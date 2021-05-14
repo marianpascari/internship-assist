@@ -31,6 +31,17 @@ class AdminController extends Controller
 
     public function storeStudent(Request $request)
     {
+        $validated = $request->validate([
+            'first_name' => 'required|max:30',
+            'last_name' => 'required|max:30',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|max:50',
+            'cnp' => 'required|digits:13',
+            'professor_id' => 'required',
+            'faculty' => 'required',
+            'specialization' => 'required'
+        ]);
+
         $user = new User();
         $student = new Student();
 
@@ -53,6 +64,15 @@ class AdminController extends Controller
 
     public function storeProfessor(Request $request)
     {
+        $validated = $request->validate([
+            'first_name' => 'required|max:30',
+            'last_name' => 'required|max:30',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|max:50',
+            'cnp' => 'required|digits:13',
+            'faculty' => 'required'
+        ]);
+
         $user = new User();
         $professor = new Professor();
 
@@ -73,6 +93,11 @@ class AdminController extends Controller
 
     public function storeAdmin(Request $request)
     {
+        $validated = $request->validate([
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|max:50'
+        ]);
+
         $user = new User();
 
         $user->email = $request->get('email');

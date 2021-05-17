@@ -27,6 +27,11 @@
                             {{ __('Request') }}
                         </x-nav-link>
                     </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('dashboard.documents')" :active="request()->routeIs('dashboard.documents')">
+                            {{ __('Documents') }}
+                        </x-nav-link>
+                    </div>
                 @endif
                 @if (Auth::user()->role == 'administrator')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

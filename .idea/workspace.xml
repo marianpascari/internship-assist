@@ -131,6 +131,9 @@
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpword" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-escaper" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
     </include_path>
   </component>
   <component name="ProjectId" id="1rmtkGHOS7PEoXgCfTpqxHvSAb4" />
@@ -146,6 +149,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\internship-assist\public\templates" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -172,7 +180,8 @@
       <workItem from="1620718230182" duration="13373000" />
       <workItem from="1620800094465" duration="12804000" />
       <workItem from="1620886594374" duration="17321000" />
-      <workItem from="1620973087858" duration="11943000" />
+      <workItem from="1620973087858" duration="12811000" />
+      <workItem from="1621232129969" duration="15232000" />
     </task>
     <servers />
   </component>

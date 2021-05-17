@@ -125,4 +125,32 @@ Route::group(['middleware' => ['role:student']], function() {
     Route::get('dashboard/showproject', 'App\Http\Controllers\StudentController@showProjectFile')->name('dashboard.showproject');
 });
 
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/documents', 'App\Http\Controllers\StudentController@documentsPage')->name('dashboard.documents');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/documents/declaratieetica', 'App\Http\Controllers\StudentController@createDeclaratieEtica')->name('dashboard.documents.declaratieetica');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::post('dashboard/documents/declaratieetica', 'App\Http\Controllers\StudentController@downloadDeclaratieEtica')->name('dashboard.documents.downloadde');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/documents/declaratieautenticitate', 'App\Http\Controllers\StudentController@createDeclaratieAutenticitate')->name('dashboard.documents.declaratieautenticitate');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::post('dashboard/documents/declaratieautenticitate', 'App\Http\Controllers\StudentController@downloadDeclaratieAutenticitate')->name('dashboard.documents.downloadda');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/documents/cerereinscriere', 'App\Http\Controllers\StudentController@createCerereInscriere')->name('dashboard.documents.cerereinscriere');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::post('dashboard/documents/cerereinscriere', 'App\Http\Controllers\StudentController@downloadCerereInscriere')->name('dashboard.documents.downloadcerere');
+});
+
 require __DIR__.'/auth.php';

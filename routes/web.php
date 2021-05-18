@@ -90,6 +90,14 @@ Route::group(['middleware' => ['role:professor']], function() {
 });
 
 Route::group(['middleware' => ['role:professor']], function() {
+    Route::post('dashboard/professor/acceptrequest', 'App\Http\Controllers\ProfessorController@acceptRequest')->name('dashboard.professor.acceptrequest');
+});
+
+Route::group(['middleware' => ['role:professor']], function() {
+    Route::post('dashboard/professor/declinerequest', 'App\Http\Controllers\ProfessorController@declineRequest')->name('dashboard.professor.declinerequest');
+});
+
+Route::group(['middleware' => ['role:professor']], function() {
     Route::get('dashboard/mystudents/studentprofile', 'App\Http\Controllers\ProfessorController@viewStudentProfile')->name('dashboard.studentprofile');
 });
 

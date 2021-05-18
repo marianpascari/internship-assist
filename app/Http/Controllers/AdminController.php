@@ -115,6 +115,12 @@ class AdminController extends Controller
         $student = Student::findorfail($id);
         $user = User::findorfail($student->user_id);
 
+        if (!is_null($student->request)) {
+            Storage::delete('public/' . $student->request->filename);
+            Storage::delete('public/' . $student->request->project_filename);
+            $student->request->delete();
+        }
+
         $user->delete();
         $student->delete();
 
@@ -165,7 +171,7 @@ class AdminController extends Controller
     {
         $requestId = $request->get('requestId');
         $thisRequest = \App\Models\Request::findorfail($requestId);
-        $thisRequest->status = 2;
+        $thisRequest->status = 3;
         $thisRequest->save();
 
         return redirect()->route('dashboard.requests');

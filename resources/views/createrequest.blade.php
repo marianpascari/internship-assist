@@ -44,8 +44,10 @@
                                 <span class="text-xl">Titlu licenta: {{ Auth::user()->student->request->title }}</span><br>
                                     <span class="text-xl">Status cerere: </span>
                                     @if (Auth::user()->student->request->status == 1)
-                                        <span class="text-sm font-medium bg-red-100 py-1 px-2 rounded text-red-500 align-middle">In asteptare</span>
+                                        <span class="text-sm font-medium bg-red-100 py-1 px-2 rounded text-red-500 align-middle">In asteptare (verificare autenticitate)</span>
                                     @elseif (Auth::user()->student->request->status == 2)
+                                        <span class="text-sm font-medium bg-red-100 py-1 px-2 rounded text-red-500 align-middle">In asteptare (verificare documente)</span>
+                                    @elseif (Auth::user()->student->request->status == 3)
                                         <span class="text-sm font-medium bg-green-100 py-1 px-2 rounded text-green-500 align-middle">Acceptata</span>
                                     @endif
                                 <div class="mt-10">

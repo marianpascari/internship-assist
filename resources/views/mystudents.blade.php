@@ -52,16 +52,20 @@
                                                     <td class="px-6 py-4 whitespace-nowrap">
                                                         @if (!is_null($student->request))
                                                             @if ($student->request->status == 1)
-                                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                                  in asteptare
+                                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-300 text-black">
+                                                                    necesita verificare
                                                                 </span>
                                                             @elseif ($student->request->status == 2)
-                                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-black">
+                                                                  in asteptare(secretariat)
+                                                                </span>
+                                                            @elseif ($student->request->status == 3)
+                                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-black">
                                                                   acceptata
                                                                 </span>
                                                             @endif
                                                         @else
-                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-600 text-white">
                                                                   nu este depusa
                                                                 </span>
                                                         @endif

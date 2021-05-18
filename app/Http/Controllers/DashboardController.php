@@ -35,8 +35,8 @@ class DashboardController extends Controller
 
     public function getRequests()
     {
-        $requests = \App\Models\Request::where('status', 1)->get();
-        $acceptedRequests = \App\Models\Request::where('status', 2)->get();
+        $requests = \App\Models\Request::where('status', 2)->get();
+        $acceptedRequests = \App\Models\Request::where('status', 3)->get();
 
         return view('requests', [
             'requests' => $requests,

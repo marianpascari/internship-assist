@@ -153,4 +153,12 @@ Route::group(['middleware' => ['role:student']], function() {
     Route::post('dashboard/documents/cerereinscriere', 'App\Http\Controllers\StudentController@downloadCerereInscriere')->name('dashboard.documents.downloadcerere');
 });
 
+Route::group(['middleware' => ['role:student']], function() {
+    Route::get('dashboard/documents/formularcontact', 'App\Http\Controllers\StudentController@createFormularContact')->name('dashboard.documents.formularcontact');
+});
+
+Route::group(['middleware' => ['role:student']], function() {
+    Route::post('dashboard/documents/formularcontact', 'App\Http\Controllers\StudentController@downloadFormularContact')->name('dashboard.documents.downloadformular');
+});
+
 require __DIR__.'/auth.php';

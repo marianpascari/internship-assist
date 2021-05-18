@@ -150,4 +150,28 @@ class StudentController extends Controller
         $templateProcessor->saveAs($fileName . '.docx');
         return response()->download($fileName . '.docx')->deleteFileAfterSend(true);
     }
+
+    public function createFormularContact()
+    {
+        return view('formularcontact');
+    }
+
+    public function downloadFormularContact(Request $request)
+    {
+        $templateProcessor = new TemplateProcessor('templates/formular.docx');
+        $templateProcessor->setValue('facultate', $request->get('facultate'));
+        $templateProcessor->setValue('cnp', $request->get('cnp'));
+        $templateProcessor->setValue('last_name', $request->get('last_name'));
+        $templateProcessor->setValue('first_name', $request->get('first_name'));
+        $templateProcessor->setValue('data_nastere', $request->get('data_nastere'));
+        $templateProcessor->setValue('program', $request->get('program'));
+        $templateProcessor->setValue('an_absolvire', $request->get('an_absolvire'));
+        $templateProcessor->setValue('sesiune', $request->get('sesiune'));
+        $templateProcessor->setValue('telefon', $request->get('telefon'));
+        $templateProcessor->setValue('email', $request->get('email'));
+
+        $fileName = "formularContact";
+        $templateProcessor->saveAs($fileName . '.docx');
+        return response()->download($fileName . '.docx')->deleteFileAfterSend(true);
+    }
 }

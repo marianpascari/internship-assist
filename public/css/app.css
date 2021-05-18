@@ -2328,6 +2328,11 @@ select {
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
 
+.bg-usv {
+  --tw-bg-opacity: 1;
+  background-color: rgba(39, 47, 84, var(--tw-bg-opacity));
+}
+
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
@@ -2724,6 +2729,11 @@ select {
 
 .group:hover .group-hover\:bg-current {
   background-color: currentColor;
+}
+
+.group:hover .group-hover\:bg-usv {
+  --tw-bg-opacity: 1;
+  background-color: rgba(39, 47, 84, var(--tw-bg-opacity));
 }
 
 .group:hover .group-hover\:bg-black {
